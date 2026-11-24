@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tiago Nicolás Villalobos | Portafolio de Soporte de Infraestructura de TI</title>
+<meta name="description" content="Portafolio digital de Tiago Nicolás Villalobos, estudiante de Soporte de Infraestructura en TI: laboratorios, proyectos y CV.">
+<style>
+:root{
+  --bg:#f2f4f2; --surface:#ffffff; --ink:#15211c; --muted:#4c5a54; --line:#c9d2cd;
+  --accent:#0d6b4d; --accent-ink:#ffffff; --warm:#a85f0a; --focus:#0d6b4d;
+}
+@media (prefers-color-scheme:dark){
+  :root{ --bg:#101714; --surface:#17211d; --ink:#e8efeb; --muted:#a3b2aa; --line:#2c3a34;
+    --accent:#5fd0a3; --accent-ink:#06150f; --warm:#e0a54f; --focus:#5fd0a3; }
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:4.5rem}
+body{margin:0;background:var(--bg);color:var(--ink);font:1rem/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+h1,h2,h3{font-family:Georgia,"Times New Roman",serif;line-height:1.15;margin:0}
+a{color:var(--accent)}
+:focus-visible{outline:3px solid var(--focus);outline-offset:2px}
+.wrap{max-width:62rem;margin:0 auto;padding:0 1.25rem}
+
+/* Navegación */
+header.top{position:sticky;top:0;z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:.25rem 1rem;padding-top:.6rem;padding-bottom:.6rem}
+.brand{font-family:Georgia,serif;font-weight:700;text-decoration:none;color:var(--ink)}
+nav ul{list-style:none;display:flex;gap:.25rem;margin:auto;padding:0;flex-wrap:wrap}
+nav a{display:block;padding:.35rem .7rem;border-radius:.4rem;text-decoration:none;color:var(--ink);font-size:.95rem}
+nav a:hover{background:var(--surface)}
+
+/* Inicio */
+.hero{padding:3rem 0 2.5rem}
+.hero h1{font-size:clamp(2.2rem,7vw,4rem);font-weight:700;max-width:14ch}
+.hero .rol{font-size:1.15rem;color:var(--muted);margin:.9rem 0 1.5rem;max-width:40rem}
+.hero-grid{display:grid;gap:2rem;grid-template-columns:1fr}
+.about p{margin:0 0 1rem;max-width:42rem}
+.btns{display:flex;flex-wrap:wrap;gap:.7rem;margin-top:1.3rem}
+.btn{display:inline-block;padding:.7rem 1.1rem;border-radius:.4rem;font-weight:600;text-decoration:none;border:2px solid var(--accent)}
+.btn.primary{background:var(--accent);color:var(--accent-ink)}
+.btn.ghost{color:var(--accent)}
+.btn:hover{filter:brightness(1.08)}
+.ficha{background:var(--surface);border:1px solid var(--line);border-left:5px solid var(--accent);border-radius:.4rem;padding:1.1rem 1.2rem;align-self:start}
+.ficha h2{font-size:1.05rem;margin-bottom:.7rem}
+.ficha dl{margin:0;display:grid;grid-template-columns:7.5rem 1fr;gap:.45rem .8rem;font-size:.95rem}
+.ficha dt{color:var(--muted)}
+.ficha dd{margin:0}
+
+section{padding:2.5rem 0;border-top:1px solid var(--line)}
+section>.wrap>h2{font-size:clamp(1.6rem,4.5vw,2.2rem);margin-bottom:.5rem}
+.lead{color:var(--muted);max-width:40rem;margin:0 0 1.8rem}
+
+/* Habilidades */
+.skills{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.skills h3{font-size:1rem;margin-bottom:.4rem}
+.skills p{margin:0;color:var(--muted);font-size:.95rem}
+
+/* Casos */
+.caso{display:grid;gap:1.2rem;grid-template-columns:1fr;padding:1.5rem 0;border-top:1px dashed var(--line)}
+.caso:first-of-type{border-top:0;padding-top:0}
+.ev{position:relative;aspect-ratio:4/3;background:var(--surface);border:2px dashed var(--line);border-radius:.4rem;overflow:hidden;display:grid;place-items:center;text-align:center;padding:1rem;color:var(--muted);font-size:.9rem}
+.ev img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;background:var(--surface)}
+.tag{display:inline-block;font-size:.85rem;font-weight:600;color:var(--warm);margin-bottom:.4rem}
+.caso h3{font-size:1.4rem;margin-bottom:.6rem}
+.caso p{margin:0 0 .8rem;max-width:38rem}
+.caso ul{margin:0 0 1rem;padding-left:1.2rem}
+.caso li{margin-bottom:.25rem}
+.links{display:flex;flex-wrap:wrap;gap:.5rem 1.2rem;font-weight:600}
+
+/* Otros proyectos */
+.otros{display:grid;gap:1rem;grid-template-columns:repeat(auto-fit,minmax(16rem,1fr));margin-top:.5rem}
+.otro{background:var(--surface);border:1px solid var(--line);border-radius:.4rem;padding:1rem 1.1rem}
+.otro h3{font-size:1.05rem;margin-bottom:.3rem}
+.otro .meta{font-size:.85rem;color:var(--muted);margin:0 0 .5rem}
+.otro p{margin:0;font-size:.95rem}
+
+/* Contacto */
+.contacto{display:grid;gap:2rem;grid-template-columns:1fr}
+form{display:grid;gap:.9rem}
+label{display:grid;gap:.3rem;font-weight:600;font-size:.95rem}
+input,textarea{font:inherit;padding:.65rem .75rem;border:1px solid var(--line);border-radius:.4rem;background:var(--surface);color:var(--ink);width:100%}
+textarea{min-height:8rem;resize:vertical}
+button.btn{cursor:pointer;font:inherit;font-weight:600;justify-self:start}
+.estado{min-height:1.4rem;margin:0;color:var(--muted);font-size:.95rem}
+.datos p{margin:0 0 .8rem}
+.datos strong{display:block;font-size:.9rem;color:var(--muted);font-weight:600}
+footer{padding:1.8rem 0 2.5rem;border-top:1px solid var(--line);color:var(--muted);font-size:.9rem}
+
+.presentacion{margin:auto;max-width:62rem;padding:2.5rem 1.25rem  }
+
+@media (min-width:760px){
+  .hero-grid{grid-template-columns:1.5fr 1fr;gap:3rem}
+  .caso{grid-template-columns:1fr 1.15fr;gap:2rem}
+  .contacto{grid-template-columns:1.2fr 1fr;gap:3rem}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="wrap">
+    <nav aria-label="Principal">
+      <ul>
+        <li><a href="#inicio">Inicio</a></li>
+        <li><a href="#laboratorios">Laboratorios</a></li>
+        <li><a href="#proyectos">Proyectos</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main>
+<!-- ============ INICIO / SOBRE MÍ ============ -->
+<div class="presentacion" id="inicio">
+  <h1>Tiago Nicolás Villalobos</h1>
+  <p class="rol" style="text-transform: uppercase;">Soporte de Infraestructura en Tecnologías de la Información. San Salvador de Jujuy, Argentina.</p>
+  <div class="hero-grid">
+    <div class="about">
+      <p>Estudiante de segundo año de la Tecnicatura en Soporte de Infraestructura en Tecnologías de la Información. Cuento con experiencia práctica en mantenimiento de computadoras, instalación de sistemas operativos, configuración básica de redes y administración de servicios informáticos.</p>
+      <p>Me interesa seguir desarrollándome en el área de soporte técnico e infraestructura, aportando responsabilidad, capacidad de aprendizaje y resolución de problemas.</p>
+      <p></p>
+      <div class="btns">
+        <!-- Subí tu CV en PDF a esta misma carpeta con este nombre, o cambiá el enlace por el de Google Drive (acceso público) -->
+        <a class="btn primary" href="https://drive.google.com/file/d/1OSKFljEOQS8XzLlG5y7f6C-8tNmoqeKS/view?usp=drivesdk" download>Descargar CV (PDF)</a>
+        <a class="btn ghost" href="#laboratorios">Ver laboratorios</a>
+      </div>
+    </div>
+    <aside class="ficha" aria-label="Ficha resumen">
+      <h2>Ficha resumen</h2>
+      <dl>
+        <dt>Formación</dt><dd>Tecnicatura en Soporte de Infraestructura en TI, I.E.S. N.º 5 "José Eugenio Tello"</dd>
+        <dt>Sistemas</dt><dd>Windows XP, 7, 10 y 11; Linux Mint y Debian</dd>
+        <dt>Redes</dt><dd>IP, DHCP, DNS, Active Directory</dd>
+        <dt>Idiomas</dt><dd>Español nativo; inglés técnico básico</dd>
+        <dt>Disponibilidad</dt><dd>Turno mañana, presencial o remota</dd>
+      </dl>
+    </aside>
+  </div>
+</div>
+
+<section aria-labelledby="hab">
+  <div class="wrap">
+    <h2 id="hab">Conocimientos técnicos</h2>
+    <p class="lead">Lo que trabajé en la cursada y en la práctica.</p>
+    <div class="skills">
+      <div><h3>Sistemas operativos</h3><p>Windows XP, 7, 10 y 11; distribuciones de Linux basadas en debian.</p></div>
+      <div><h3>Hardware</h3><p>identificación de componentes, desmontaje, limpieza y mantenimiento de equipos.</p></div>
+      <div><h3>Redes</h3><p>configuración IP estática y dinámica, DHCP, DNS, recursos compartidos, grupos de trabajo y diagnóstico basico mediante herramientas nativas de Windows como “ping”, “ipconfig”, “tracert” y “nslookup”.</p></div>
+      <div><h3>Servidores</h3><p>conocimientos prácticos de Windows Server, Active Directory, DHCP y DNS en entornos virtualizados. Y gestion basica en servidores con linux</p></div>
+      <div><h3>Bases de datos y web</h3><p>MySQL, phpMyAdmin, HTML y CSS; conocimientos iniciales de Python y Django.</p></div>
+      <div><h3>Herramientas de software</h3><p>VirtualBox, Cisco Packet Tracer, GNS3, XAMPP, Visual Studio Code, Git, GitHub, Microsoft Word y Excel. Conocimientos básicos de Docker, herramientas de relevamiento y diagnóstico de hardware como CPU-Z, CrystalDiskInfo o MemTest86, Utilidades nativas de Windows.
+</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ LABORATORIOS ============ -->
+<section id="laboratorios" aria-labelledby="lab">
+  <div class="wrap">
+    <h2 id="lab">Laboratorios</h2>
+    <p class="lead">Tres evidencias de la cursada. Cada una incluye el registro de lo que hice y el enlace al informe completo.</p>
+
+    <!-- ===== CASO 1 ===== -->
+    <article class="caso">
+      <div class="ev">
+        <span>Foto de la auditoría y del cambio de pasta térmica<br>(guardá la imagen como img/caso1.jpg)</span>
+        <img src="occt.jpg" alt="Captura de la auditoría con OCCT y equipo durante el cambio de pasta térmica" onerror="this.remove()">
+      </div>
+      <div>
+        <h3>Auditoría con OCCT y cambio de pasta térmica</h3>
+        <p>Evalué el estado de un equipo con la herramienta OCCT, realicé el desmontaje, la limpieza interna y el reemplazo de la pasta térmica.</p>
+        <ul>
+          <li>Prueba de estabilidad y temperaturas con OCCT.</li>
+          <li>Desmontaje, limpieza de componentes y reemplazo de pasta térmica.</li>
+          <li>Registro fotográfico del procedimiento.</li>
+        </ul>
+        <div class="links">
+          <!-- Reemplazá # por el enlace público (Google Drive: "Cualquier persona con el enlace") -->
+          <a href="https://drive.google.com/file/d/1rfliqrILGlrKf5nZ-3nJd6W41IqI1tHZ/view?usp=drivesdk" target="_blank" rel="noopener">Ver informe (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== CASO 2 ===== -->
+    <article class="caso">
+      <div class="ev">
+        <img src="img1 pupi.jpg" alt="Cables de red crimpeados y captura del ping exitoso entre Ubuntu y Puppy Linux" onerror="this.remove()">
+      </div>
+      <div>
+        <h3>Recuperación de datos del usuario</h3>
+        <p>realice el proceso de recuperación de datos del usuario, mediante el arranque pupy linux en el equipo.</p>
+        <ul>
+          <li>Creacion del pendrive de booteoteo.</li>
+          <li>Arranque desde un sistema live.</li>
+          <li>Identificación y extracción de archivos importantes.</li>
+        </ul>
+        <div class="links">
+          <a href="#" target="_blank" rel="noopener">Ver informe (PDF)</a>
+        </div>
+      </div>
+    </article>
+
+    <!-- ===== CASO 3 ===== -->
+    <article class="caso">
+      <div class="ev">
+        <span>Captura de la planilla de stock<br>(guardá la imagen como img/caso3.jpg)</span>
+        <img src="sistema.jpg" alt="Planilla de stock y canibalismo de netbooks" onerror="this.remove()">
+      </div>
+      <div>
+        <h3>Instalación del sistema de gestión de personal</h3>
+        <p>Junto con mi compañero en las practicas realizamos la instalación del sistema de gestión de personal del departamento de recursos humanos en la "Dirección Provincial de Recursos Hídricos"</p>
+        <ul>
+          <li>Instalacion manual del sistema</li>
+          <li>Configuracion del acceso desde otras computadora.</li>
+          <li>Normalización de datos en Excel e informes diarios.</li>
+        </ul>
+        <div class="links">
+          <a href="https://drive.google.com/file/d/1d7n_h8ojvYIa7L-YBDvbKQ8DTYZKSbEo/view?usp=drivesdk" target="_blank" rel="noopener">Ver informe (PDF)</a>
+        </div>
+      </div>
+    </article>
+  </div>
+</section>
+
+<!-- ============ OTROS PROYECTOS ============ -->
+<section id="proyectos" aria-labelledby="pro">
+  <div class="wrap">
+    <h2 id="pro">Otros proyectos y experiencia</h2>
+    <p class="lead">Prácticas profesionalizantes y proyectos académicos.</p>
+    <div class="otros">
+      <article class="otro">
+        <h3>Prácticas profesionalizantes en Recursos Hídricos</h3>
+        <p class="meta">San Salvador de Jujuy | 7 jornadas presenciales</p>
+        <p>Instalación y configuración de un sistema de gestión de personal, acceso desde otras computadoras, normalización de datos en Excel e informes diarios.</p>
+      </article>
+      <article class="otro">
+        <h3>Sistema web de asistencia docente</h3>
+        <p class="meta">Proyecto académico | PHP, MySQL, Apache, MariaDB, Termux</p>
+        <p>Aplicación para registrar la asistencia por materia y fecha, adaptada a celulares y ejecutada desde un teléfono Android. El código PHP se desarrolló con asistencia de inteligencia artificial.</p>
+      </article>
+      <article class="otro">
+        <h3>Servidor de dominio virtualizado</h3>
+        <p class="meta">Proyecto académico | Windows Server, Active Directory</p>
+        <p>Instalación de Windows Server en una máquina virtual con DHCP, DNS y Active Directory para crear y administrar un dominio.</p>
+      </article>
+      <article class="otro">
+        <h3>Organizador de tareas</h3>
+        <p class="meta">Proyecto académico grupal | Python y Django</p>
+        <p>Aplicación web para registrar tareas, fechas de vencimiento y su estado (pendiente o completada).</p>
+      </article>
+      <article class="otro">
+        <h3>Mantenimiento de equipos</h3>
+        <p class="meta">Experiencia práctica independiente</p>
+        <p>Instalación de Windows y Linux, limpieza interna, cambio de pasta térmica, formateo y resolución de problemas básicos.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACTO ============ -->
+<section id="contacto" aria-labelledby="con">
+  <div class="wrap">
+    <h2 id="con">Contacto</h2>
+    <div class="contacto">             
+      <div class="datos">
+        <p><strong>Correo</strong><a href="mailto:tiagovillaloboscapo@gmail.com">tiagovillaloboscapo@gmail.com</a></p>
+        <!-- Si tenés correo institucional, agregalo acá -->
+        <p><strong>Teléfono</strong><a href="tel:+5493884607306">+54 9 388 460 7306</a></p>
+        <p><strong>Ubicación</strong>San Salvador de Jujuy, Jujuy, Argentina</p>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">Tiago Nicolás Villalobos. Portafolio del TP 8, Prácticas Profesionalizantes, I.E.S. N.º 5 "José Eugenio Tello".</div>
+</footer>
+
+<script>
+// El formulario abre tu app de correo con el mensaje ya redactado.
+document.getElementById('form').addEventListener('submit', function (e) {
+  e.preventDefault();
+  var n = document.getElementById('nombre').value.trim();
+  var c = document.getElementById('email').value.trim();
+  var m = document.getElementById('mensaje').value.trim();
+  var estado = document.getElementById('estado');
+  if (!n || !c || !m) { estado.textContent = 'Completá nombre, correo y mensaje para enviar.'; return; }
+  var cuerpo = m + '\n\nNombre: ' + n + '\nCorreo: ' + c;
+  window.location.href = 'mailto:tiagovillaloboscapo@gmail.com?subject=' +
+    encodeURIComponent('Contacto desde el portafolio: ' + n) + '&body=' + encodeURIComponent(cuerpo);
+  estado.textContent = 'Se abrió tu app de correo. Revisá el mensaje y presioná enviar.';
+});
+</script>
+</body>
+</html>
